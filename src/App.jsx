@@ -2,6 +2,8 @@ import { Suspense } from "react";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import IssueManagement from "./components/IssueManagement";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const fetchIssues = async () => {
   const result = await fetch("/ticket.json");
@@ -18,6 +20,7 @@ function App() {
         <IssueManagement fetchPromise={fetchPromise}></IssueManagement>
       </Suspense>
       <Footer></Footer>
+      <ToastContainer></ToastContainer>
     </div>
   );
 }

@@ -1,16 +1,21 @@
-# React + Vite
+What is JSX, and why is it used?
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Ans:It is an extension of JS that allows the developer to write HTML like code in JS.It is used beacuse it allows the developer to visuale the output while writing logic.
 
-Currently, two official plugins are available:
+What is the difference between State and
+Props?
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Ans:Props are data passed from parent to child components. Stat is internal data that a component manages itself
 
-## React Compiler
+What is the useState hook, and how does it work?
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Ans:The useState hook allows functional components to have state. It turns an array with two values:
+1.the current state value
+2.a function to update that value
+How can you share state between components in React?
 
-## Expanding the ESLint configuration
+Ans:By lifting state up to a common parent and passing it down as props
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+How is event handling done in React?
+
+Ans:React handles events using synthetic events like camelCase (onClick,onChange).
