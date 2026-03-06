@@ -15,7 +15,7 @@ const IssueManagement = ({ fetchPromise }) => {
       (ticket) => ticket.id === issue.id,
     );
     if (alreadyExist) {
-      return toast.success(`"${issue.title}" is already in Task Status`);
+      return toast.warning(`"${issue.title}" is already in Task Status`);
     }
     setData((prev) =>
       prev.map((ticket) =>
