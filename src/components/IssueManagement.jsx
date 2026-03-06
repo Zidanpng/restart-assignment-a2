@@ -11,20 +11,23 @@ const IssueManagement = ({ fetchPromise }) => {
   const [resolvedTask, setResolvedTask] = useState([]);
 
   const handleTicketClick = (issue) => {
+    const alreadyExist = selectedTickets.some(
+      (ticket) => ticket.id === issue.id,
+    );
+    if (alreadyExist) {
+      return toast.success(`"${issue.title}" is already in Task Status`);
+    }
     setData((prev) =>
       prev.map((ticket) =>
         ticket.id === issue.id ? { ...ticket, status: "In-Progress" } : ticket,
       ),
     );
 
-    setSelectedTickets((prev) => {
-      const alreadyExist = prev.some((ticket) => ticket.id === issue.id);
-      if (!alreadyExist) {
-        return [...prev, issue];
-      }
-      return prev;
-    });
-    toast.success(`"${issue.title}" added to Task Status!`);
+    setSelectedTickets((prev) => [
+      ...prev,
+      { ...issue, status: "In-progress" },
+    ]);
+    toast.success(`"${issue.title}" moved to Task Status`);
   };
   const handleCompleteTask = (ticketId) => {
     const ticketComplete = selectedTickets.find(
